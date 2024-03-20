@@ -2,6 +2,7 @@
 using System.Text;
 using DataInCloud.Dal.Car;
 using FluentAssertions;
+using Microsoft.AspNetCore.TestHost;
 using Xunit;
 
 namespace DataInCloud.IntegrationTests.Car;
@@ -27,7 +28,7 @@ public class GetAsyncTests : BaseTest
         await AppDbContext.SaveChangesAsync();
 
         // Act
-        var message = new HttpRequestMessage(HttpMethod.Get, $"api/v1/cars");
+        var message = new HttpRequestMessage(HttpMethod.Get, "api/v1/cars/1");
         var response = await _httpClient.SendAsync(message);
 
         // Assert

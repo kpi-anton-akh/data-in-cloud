@@ -2,16 +2,13 @@
 using DataOnCloud.Api;
 using EntityFrameworkCore.Testing.Common.Helpers;
 using EntityFrameworkCore.Testing.Moq.Helpers;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace DataInCloud.IntegrationTests;
 
 public class TestStartup : Startup
 {
-    public TestStartup(IConfiguration configuration, IWebHostEnvironment env) 
+    public TestStartup(IConfiguration configuration, IWebHostEnvironment env)
         : base(configuration, env)
     {
     }

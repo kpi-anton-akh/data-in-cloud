@@ -29,6 +29,7 @@ public class BaseTest : IDisposable
     {
         _server = new HostBuilder()
             .UseServiceProviderFactory(new AutofacServiceProviderFactory())
+            .UseEnvironment("Development")
             .ConfigureWebHost(webHost =>
             {
                 webHost.UseTestServer();
